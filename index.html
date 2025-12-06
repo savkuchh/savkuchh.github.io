@@ -50,22 +50,26 @@
 
     .hamburger{display:none;font-size:28px;color:white;cursor:pointer;z-index:1000}
 
-    /* 🔥 FIXED MOBILE MENU */
+    /* 🔥 MOBILE MENU WITH SLIDE ANIMATION */
     .mobile-menu{
-      display:none;
+      display:flex;
       flex-direction:column;
       background:#111;
       padding:20px;
       position:absolute;
       top:65px;
-      right:20px;
-      width:200px;
-      z-index:9999;
+      right:-250px; /* start hidden outside */
+      width:220px;
       border-radius:10px;
-      box-shadow:0 4px 20px rgba(0,0,0,0.4)
+      box-shadow:0 4px 20px rgba(0,0,0,0.4);
+      transition:right 0.4s ease;
+      z-index:9999;
+    }
+    .mobile-menu.show{
+      right:20px; /* slide in */
     }
     .mobile-menu a{
-      color:white;padding:10px 0;border-bottom:1px solid #333;text-decoration:none
+      color:white;padding:10px 0;border-bottom:1px solid #333;text-decoration:none;
     }
 
     .hero{
@@ -251,7 +255,7 @@
 
   function toggleMenu(){
     const menu=document.getElementById("mobMenu");
-    menu.style.display = menu.style.display==="flex" ? "none" : "flex";
+    menu.classList.toggle("show");
   }
 
   const slider=document.getElementById("slider");
