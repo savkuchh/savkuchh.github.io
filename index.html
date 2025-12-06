@@ -38,10 +38,12 @@
 
     /* HEADER */
     header{
-      width:100%;padding:15px 20px;display:flex;align-items:center;justify-content:space-between;
+      width:100%;padding:15px 18px;
+      display:flex;align-items:center;justify-content:space-between;
       background:linear-gradient(90deg,#FF6B6B,#FF9F1C,#2EC4B6,#4C6EF5);
       background-size:400% 400%;animation:move 12s ease infinite;
       position:sticky;top:0;z-index:999;
+      overflow:hidden;
     }
     @keyframes move{
       0%{background-position:0% 50%}
@@ -50,26 +52,21 @@
     }
 
     .logo-area{display:flex;align-items:center;gap:15px}
-    .logo-area img{width:50px;height:50px;border-radius:50%;object-fit:cover;border:2px solid white}
-    header h1{font-size:28px;text-shadow:0 2px 6px rgba(0,0,0,0.4)}
+    .logo-area img{width:48px;height:48px;border-radius:50%;object-fit:cover;border:2px solid white}
+    header h1{font-size:26px;text-shadow:0 2px 6px rgba(0,0,0,0.4)}
 
     /* Desktop Menu */
-    nav{
-      display:flex;
-      gap:20px;
-    }
+    nav{display:flex;gap:20px}
     nav a{
       text-decoration:none;color:white;font-size:16px;
       padding:8px 14px;border-radius:8px;transition:0.3s
     }
     nav a:hover{background:rgba(255,255,255,0.25)}
 
-
     /* SOCIAL ICON */
-    .icons{display:flex;gap:15px;margin-left:15px}
+    .icons{display:flex;gap:15px;margin-left:8px}
     .icons i{font-size:20px;color:white;cursor:pointer;transition:.3s}
     .icons i:hover{transform:scale(1.2)}
-
 
     /* MOBILE HAMBURGER */
     .hamburger{
@@ -170,10 +167,41 @@
     footer a{text-decoration:none;color:#bbb;font-size:14px;display:block;margin:6px 0}
     footer .copy{text-align:center;margin-top:20px;grid-column:1/-1;color:#999}
 
-    /* Responsive */
+    /* MOBILE FIXES */
     @media(max-width:768px){
+
+      header{
+        padding:12px 12px;
+      }
+      .logo-area h1{
+        font-size:20px;
+      }
+      .icons{
+        gap:8px;
+      }
+      .icons i{
+        font-size:17px;
+      }
+      .mode-btn{
+        padding:5px 8px;
+        font-size:11px;
+      }
+      .hamburger{
+        display:block;
+        font-size:24px;
+      }
+
+      /* RIGHT SIDE WIDTH FIX */
+      header > div:last-child{
+        max-width:145px;
+        display:flex;
+        align-items:center;
+        gap:8px;
+        overflow:hidden;
+        flex-shrink:1;
+      }
+
       nav{display:none}
-      .hamburger{display:block}
     }
   </style>
 </head>
@@ -194,8 +222,8 @@
       <a href="#contact">Contact</a>
     </nav>
 
-    <!-- Social + Mode + Mobile Menu Button -->
-    <div style="display:flex;align-items:center;gap:20px">
+    <!-- Right Icons + Mode + Hamburger -->
+    <div style="display:flex;align-items:center;gap:12px">
 
       <div class="icons">
         <i class="fa-solid fa-earth-americas"></i>
@@ -205,7 +233,6 @@
 
       <button class="mode-btn" onclick="toggleMode()">Mode</button>
 
-      <!-- Hamburger -->
       <i class="fa-solid fa-bars hamburger" onclick="toggleMenu()"></i>
     </div>
 
@@ -217,91 +244,6 @@
     </div>
 
   </header>
-
-  <!-- HERO -->
-  <section class="hero">
-    <h2>Sab Kuchh Ek Hi Jagah!</h2>
-    <p>Aapki har zaroorat ke liye multicolor stylish homepage.</p>
-    <div class="hero-btns">
-      <button class="btn1">Get Started</button>
-      <button class="btn2">Learn More</button>
-    </div>
-  </section>
-
-  <!-- TITLE -->
-  <h2 class="section-title">Suvidhayen</h2>
-
-  <!-- CARDS -->
-  <section class="cards" id="services">
-
-    <div class="card c1"><i class="fa-solid fa-newspaper"></i><h3>News Updates</h3><p>Latest notifications.</p></div>
-    <div class="card c2"><i class="fa-solid fa-book"></i><h3>Study Material</h3><p>Notes & quizzes.</p></div>
-    <div class="card c3"><i class="fa-solid fa-hand-holding-heart"></i><h3>Gov Schemes</h3><p>Yojnaon ki jankari.</p></div>
-    <div class="card c4"><i class="fa-solid fa-toolbox"></i><h3>Online Tools</h3><p>Converters & forms.</p></div>
-    <div class="card c5"><i class="fa-solid fa-code"></i><h3>Tech/Web</h3><p>HTML CSS help.</p></div>
-    <div class="card c6"><i class="fa-solid fa-gamepad"></i><h3>Entertainment</h3><p>Games & fun zone.</p></div>
-    <div class="card c7"><i class="fa-solid fa-briefcase"></i><h3>Job Alerts</h3><p>Rozgar updates.</p></div>
-    <div class="card c8"><i class="fa-solid fa-list-check"></i><h3>Results</h3><p>Exam results.</p></div>
-    <div class="card c9"><i class="fa-solid fa-store"></i><h3>Shopping</h3><p>Best deals.</p></div>
-    <div class="card c10"><i class="fa-solid fa-headset"></i><h3>Support</h3><p>Online support.</p></div>
-
-  </section>
-
-  <!-- TOUCH SLIDER -->
-  <div class="slider" id="slider">
-    <div class="slides" id="slides">
-      <img src="https://picsum.photos/1200/350?1">
-      <img src="https://picsum.photos/1200/350?2">
-      <img src="https://picsum.photos/1200/350?3">
-      <img src="https://picsum.photos/1200/350?4">
-    </div>
-  </div>
-
-  <!-- CONTACT -->
-  <div class="contact" id="contact">
-    <h2>Contact Us</h2>
-    <div class="form-group"><input placeholder="Name"></div>
-    <div class="form-group"><input placeholder="Email"></div>
-    <div class="form-group"><textarea placeholder="Message"></textarea></div>
-    <button>Send Message</button>
-  </div>
-
-  <!-- FOOTER -->
-  <footer>
-    <div>
-      <h3>Links</h3>
-      <a href="#">Home</a>
-      <a href="#">About</a>
-      <a href="#">Privacy</a>
-      <a href="#">Terms</a>
-    </div>
-
-    <div>
-      <h3>Services</h3>
-      <a href="#">News</a>
-      <a href="#">Study</a>
-      <a href="#">Schemes</a>
-      <a href="#">Tools</a>
-    </div>
-
-    <div>
-      <h3>Support</h3>
-      <a href="#">Help Desk</a>
-      <a href="#">Contact</a>
-      <a href="#">Report Issue</a>
-    </div>
-
-    <div>
-      <h3>Social</h3>
-      <a href="#">Facebook</a>
-      <a href="#">YouTube</a>
-      <a href="#">Instagram</a>
-    </div>
-
-    <div class="copy">
-      © <span id="year"></span> SAVKUCHH | All Rights Reserved
-    </div>
-  </footer>
 
   <script>
     document.getElementById("year").textContent = new Date().getFullYear();
@@ -315,29 +257,6 @@
       const menu = document.getElementById("mobMenu");
       menu.style.display = menu.style.display === "flex" ? "none" : "flex";
     }
-
-    /* TOUCH SLIDER */
-    const slider = document.getElementById("slider");
-    const slides = document.getElementById("slides");
-    let startX = 0;
-    let currentTranslate = 0;
-    let index = 0;
-
-    slider.addEventListener("touchstart",(e)=>{
-      startX = e.touches[0].clientX;
-    });
-
-    slider.addEventListener("touchend",(e)=>{
-      let endX = e.changedTouches[0].clientX;
-
-      if(endX < startX - 50) index++;
-      if(endX > startX + 50) index--;
-
-      if(index < 0) index = 0;
-      if(index > 3) index = 3;
-
-      slides.style.transform = `translateX(${-index * 100}%)`;
-    });
   </script>
 
 </body>
