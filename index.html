@@ -1,0 +1,232 @@
+<!doctype html>
+<html lang="hi" data-theme="dark">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>SAVKUCHH - Stylish Multicolor Homepage</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif}
+
+    :root{
+      --bg-dark:#0f0f17;
+      --bg-light:#ffffff;
+      --text-dark:#ffffff;
+      --text-light:#111111;
+      --card-dark:#1a1a27;
+      --card-light:#f2f2f7;
+    }
+    
+    [data-theme="dark"]{
+      --bg:var(--bg-dark);
+      --text:var(--text-dark);
+      --card:var(--card-dark);
+    }
+    [data-theme="light"]{
+      --bg:var(--bg-light);
+      --text:var(--text-light);
+      --card:var(--card-light);
+    }
+
+    body{background:var(--bg);color:var(--text);transition:0.4s}
+
+    /* HEADER */
+    header{
+      width:100%;padding:15px 40px;display:flex;align-items:center;justify-content:space-between;
+      background:linear-gradient(90deg,#FF6B6B,#FF9F1C,#2EC4B6,#4C6EF5);
+      background-size:400% 400%;animation:move 12s ease infinite;
+      position:sticky;top:0;z-index:999;
+    }
+    @keyframes move{
+      0%{background-position:0% 50%}
+      50%{background-position:100% 50%}
+      100%{background-position:0% 50%}
+    }
+
+    .logo-area{display:flex;align-items:center;gap:15px}
+    .logo-area img{width:50px;height:50px;border-radius:50%;object-fit:cover;border:2px solid white}
+    header h1{font-size:30px;text-shadow:0 2px 6px rgba(0,0,0,0.4)}
+
+    nav a{
+      margin-left:20px;text-decoration:none;color:white;font-size:16px;
+      padding:8px 14px;border-radius:8px;transition:0.3s
+    }
+    nav a:hover{background:rgba(255,255,255,0.25)}
+
+    .icons{display:flex;gap:15px;margin-left:15px}
+    .icons i{font-size:22px;color:white;cursor:pointer;transition:.3s}
+    .icons i:hover{transform:scale(1.2)}
+
+
+    /* DARK MODE BUTTON */
+    .mode-btn{margin-left:20px;padding:8px 16px;border:0;border-radius:6px;font-weight:600;cursor:pointer}
+
+
+    /* HERO SECTION */
+    .hero{
+      padding:70px 40px;text-align:center;
+      background:url('https://images.unsplash.com/photo-1522199710521-72d69614c702?auto=format&fit=crop&w=1400&q=80');
+      background-size:cover;background-position:center;
+      box-shadow:inset 0 0 0 1000px rgba(0,0,0,0.45);
+    }
+    .hero h2{font-size:48px;margin-bottom:10px}
+    .hero p{font-size:18px;opacity:0.9}
+    .hero-btns button{
+      padding:12px 24px;margin:10px;border-radius:8px;border:0;font-size:16px;font-weight:600;cursor:pointer
+    }
+    .btn1{background:#ff4757;color:white}
+    .btn2{background:white;color:#111}
+
+
+    /* SLIDER */
+    .slider{margin:50px auto;width:90%;overflow:hidden;border-radius:12px}
+    .slides{display:flex;width:400%;animation:slide 12s infinite}
+    .slides img{width:100%;height:350px;object-fit:cover}
+    @keyframes slide{
+      0%,20%{margin-left:0}
+      25%,45%{margin-left:-100%}
+      50%,70%{margin-left:-200%}
+      75%,100%{margin-left:-300%}
+    }
+
+
+    /* FEATURE CARDS */
+    .section-title{text-align:center;margin:50px 0 20px;font-size:30px;font-weight:700}
+
+    .cards{
+      padding:20px 40px;display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px;
+    }
+    .card{
+      background:var(--card);padding:22px;border-radius:18px;box-shadow:0 4px 15px rgba(0,0,0,0.4);
+      border-top:6px solid transparent;transition:0.3s
+    }
+    .card:hover{transform:translateY(-6px);box-shadow:0 8px 24px rgba(0,0,0,0.6)}
+
+    .c1{border-color:#FF6B6B}
+    .c2{border-color:#FF9F1C}
+    .c3{border-color:#2EC4B6}
+    .c4{border-color:#4C6EF5}
+    .c5{border-color:#9F2CF5}
+    .c6{border-color:#2DF57E}
+    .c7{border-color:#ff3fbd}
+    .c8{border-color:#16e0bd}
+    .c9{border-color:#f54291}
+    .c10{border-color:#f1c40f}
+
+    .card h3{font-size:22px;margin-bottom:8px}
+    .card p{font-size:14px;color:#ccc}
+
+
+    /* CONTACT FORM */
+    .contact{
+      width:90%;margin:auto;margin-top:40px;padding:30px;background:var(--card);
+      border-radius:15px;box-shadow:0 4px 20px rgba(0,0,0,0.4)
+    }
+    .contact h2{text-align:center;margin-bottom:20px}
+    .form-group{margin-bottom:15px}
+    .form-group input,.form-group textarea{
+      width:100%;padding:12px;border-radius:8px;border:1px solid #666;background:transparent;color:var(--text)
+    }
+    .form-group textarea{height:120px}
+    .contact button{margin-top:10px;padding:12px 20px;border:0;border-radius:8px;background:#4C6EF5;color:white;cursor:pointer;font-weight:600}
+
+
+    /* ADVANCED FOOTER */
+    footer{margin-top:60px;padding:40px;background:#08080e;color:#ccc;text-align:center;border-top:1px solid #222}
+    footer .links{display:flex;justify-content:center;gap:40px;margin-bottom:15px}
+    footer a{text-decoration:none;color:#bbb}
+
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo-area">
+      <img src="SK.png" alt="logo">
+      <h1>SAVKUCHH</h1>
+    </div>
+
+    <div style="display:flex;align-items:center;gap:20px">
+      <nav>
+        <a href="#">Home</a>
+        <a href="#services">Services</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <div class="icons">
+        <i>🌐</i>
+        <i>📘</i>
+        <i>▶️</i>
+      </div>
+
+      <button class="mode-btn" onclick="toggleMode()">Mode Change</button>
+    </div>
+  </header>
+
+
+  <section class="hero">
+    <h2>Sab Kuchh Ek Hi Jagah!</h2>
+    <p>Aapki har zaroorat ke liye multicolor stylish homepage.</p>
+    <div class="hero-btns">
+      <button class="btn1">Get Started</button>
+      <button class="btn2">Learn More</button>
+    </div>
+  </section>
+
+  <h2 class="section-title">Suvidhayen</h2>
+  <section class="cards" id="services">
+    <div class="card c1"><h3>News Updates</h3><p>Latest notifications.</p></div>
+    <div class="card c2"><h3>Study Material</h3><p>Notes & quizzes.</p></div>
+    <div class="card c3"><h3>Gov Schemes</h3><p>Yojnaon ki jankari.</p></div>
+    <div class="card c4"><h3>Online Tools</h3><p>Converters & forms.</p></div>
+    <div class="card c5"><h3>Tech/Web</h3><p>HTML CSS help.</p></div>
+    <div class="card c6"><h3>Entertainment</h3><p>Games & fun zone.</p></div>
+    <div class="card c7"><h3>Jobs Alerts</h3><p>Rozgar updates.</p></div>
+    <div class="card c8"><h3>Results</h3><p>Exam results.</p></div>
+    <div class="card c9"><h3>Shopping</h3><p>Best deals.</p></div>
+    <div class="card c10"><h3>Services</h3><p>Online support.</p></div>
+  </section>
+
+ <!-- SLIDER -->
+  <div class="slider">
+    <div class="slides">
+      <img src="https://picsum.photos/1200/350?1">
+      <img src="https://picsum.photos/1200/350?2">
+      <img src="https://picsum.photos/1200/350?3">
+      <img src="https://picsum.photos/1200/350?4">
+    </div>
+  </div>
+  
+  <!-- CONTACT FORM -->
+  <div class="contact" id="contact">
+    <h2>Contact Us</h2>
+    <div class="form-group"><input placeholder="Name"></div>
+    <div class="form-group"><input placeholder="Email"></div>
+    <div class="form-group"><textarea placeholder="Message"></textarea></div>
+    <button>Send Message</button>
+  </div>
+
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="links">
+      <a href="#">About</a>
+      <a href="#">Privacy</a>
+      <a href="#">Terms</a>
+      <a href="#">Support</a>
+    </div>
+    © <span id="year"></span> SAVKUCHH | All Rights Reserved
+  </footer>
+
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    function toggleMode(){
+      const html = document.documentElement;
+      html.dataset.theme = html.dataset.theme === "dark" ? "light" : "dark";
+    }
+  </script>
+
+</body>
+</html>
