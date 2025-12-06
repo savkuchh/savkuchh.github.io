@@ -28,7 +28,7 @@
       width:100%;padding:15px 20px;display:flex;align-items:center;justify-content:space-between;
       background:linear-gradient(90deg,#FF6B6B,#FF9F1C,#2EC4B6,#4C6EF5);
       background-size:400% 400%;animation:move 12s ease infinite;
-      position:sticky;top:0;z-index:999
+      position:sticky;top:0;z-index:999;flex-wrap:wrap;
     }
     @keyframes move{
       0%{background-position:0% 50%}
@@ -48,7 +48,7 @@
     .icons i{font-size:20px;color:white;cursor:pointer;transition:.3s}
     .icons i:hover{transform:scale(1.2)}
 
-    .hamburger{display:none;font-size:28px;color:white;cursor:pointer}
+    .hamburger{display:none;font-size:28px;color:white;cursor:pointer;z-index:1000}
 
     /* 🔥 FIXED MOBILE MENU */
     .mobile-menu{
@@ -57,10 +57,10 @@
       background:#111;
       padding:20px;
       position:absolute;
-      top:75px;
-      right:20px;        /* <-- FIXED */
-      width:220px;       /* <-- FIXED */
-      z-index:9999;      /* <-- FIXED */
+      top:65px;
+      right:20px;
+      width:200px;
+      z-index:9999;
       border-radius:10px;
       box-shadow:0 4px 20px rgba(0,0,0,0.4)
     }
@@ -139,7 +139,7 @@
     footer .copy{text-align:center;margin-top:20px;grid-column:1/-1;color:#999}
 
     @media(max-width:768px){
-      nav{display:none}
+      nav{display:none;width:100%}
       .hamburger{display:block}
       .hero h2{font-size:32px}
       .hero p{font-size:16px}
@@ -157,7 +157,7 @@
       <a href="#contact">Contact</a>
     </nav>
 
-    <div style="display:flex;align-items:center;gap:20px">
+    <div style="display:flex;align-items:center;gap:20px;position:relative;">
       <div class="icons">
         <i class="fa-solid fa-earth-americas"></i>
         <i class="fa-brands fa-facebook"></i>
