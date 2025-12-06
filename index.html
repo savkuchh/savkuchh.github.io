@@ -24,10 +24,17 @@
 
     body{background:var(--bg);color:var(--text);transition:0.4s}
 
-    header{width:100%;padding:15px 20px;display:flex;align-items:center;justify-content:space-between;
-      background:linear-gradient(90deg,#FF6B6B,#FF9F1C,#2EC4B6,#4C6EF5);background-size:400% 400%;animation:move 12s ease infinite;
-      position:sticky;top:0;z-index:999}
-    @keyframes move{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
+    header{
+      width:100%;padding:15px 20px;display:flex;align-items:center;justify-content:space-between;
+      background:linear-gradient(90deg,#FF6B6B,#FF9F1C,#2EC4B6,#4C6EF5);
+      background-size:400% 400%;animation:move 12s ease infinite;
+      position:sticky;top:0;z-index:999
+    }
+    @keyframes move{
+      0%{background-position:0% 50%}
+      50%{background-position:100% 50%}
+      100%{background-position:0% 50%}
+    }
 
     .logo-area{display:flex;align-items:center;gap:15px}
     .logo-area img{width:50px;height:50px;border-radius:50%;object-fit:cover;border:2px solid white}
@@ -43,16 +50,38 @@
 
     .hamburger{display:none;font-size:28px;color:white;cursor:pointer}
 
-    .mobile-menu{display:none;flex-direction:column;background:#111;padding:20px;position:absolute;top:70px;right:10px;width:200px;
-      border-radius:10px;box-shadow:0 4px 20px rgba(0,0,0,0.4)}
-    .mobile-menu a{color:white;padding:10px 0;border-bottom:1px solid #333;text-decoration:none}
+    /* 🔥 FIXED MOBILE MENU */
+    .mobile-menu{
+      display:none;
+      flex-direction:column;
+      background:#111;
+      padding:20px;
+      position:absolute;
+      top:75px;
+      right:20px;        /* <-- FIXED */
+      width:220px;       /* <-- FIXED */
+      z-index:9999;      /* <-- FIXED */
+      border-radius:10px;
+      box-shadow:0 4px 20px rgba(0,0,0,0.4)
+    }
+    .mobile-menu a{
+      color:white;padding:10px 0;border-bottom:1px solid #333;text-decoration:none
+    }
 
-    .hero{padding:70px 20px;text-align:center;background:url('https://images.unsplash.com/photo-1522199710521-72d69614c702?auto=format&fit=crop&w=1400&q=80');
-      background-size:cover;background-position:center;box-shadow:inset 0 0 0 1000px rgba(0,0,0,0.45)}
+    .hero{
+      padding:70px 20px;text-align:center;
+      background:url('https://images.unsplash.com/photo-1522199710521-72d69614c702?auto=format&fit=crop&w=1400&q=80');
+      background-size:cover;background-position:center;
+      box-shadow:inset 0 0 0 1000px rgba(0,0,0,0.45)
+    }
     .hero h2{font-size:42px;margin-bottom:10px}
     .hero p{font-size:18px;opacity:0.9}
-    .hero-btns button{padding:12px 24px;margin:10px;border-radius:8px;border:0;font-size:16px;font-weight:600;cursor:pointer}
-    .btn1{background:#ff4757;color:white}.btn2{background:white;color:#111}
+    .hero-btns button{
+      padding:12px 24px;margin:10px;border-radius:8px;border:0;font-size:16px;
+      font-weight:600;cursor:pointer
+    }
+    .btn1{background:#ff4757;color:white}
+    .btn2{background:white;color:#111}
 
     .slider{margin:40px auto;width:92%;overflow:hidden;border-radius:12px;position:relative}
     .slides{display:flex;transition:0.5s}
@@ -60,50 +89,101 @@
 
     .section-title{text-align:center;margin:40px 0 20px;font-size:30px;font-weight:700}
 
-    .cards{padding:20px;display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px}
-    .card{background:var(--card);padding:24px;border-radius:18px;box-shadow:0 4px 15px rgba(0,0,0,0.4);
-      border-top:6px solid transparent;transition:0.3s;text-align:center}
+    .cards{
+      padding:20px;display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px
+    }
+    .card{
+      background:var(--card);padding:24px;border-radius:18px;
+      box-shadow:0 4px 15px rgba(0,0,0,0.4);
+      border-top:6px solid transparent;transition:0.3s;text-align:center
+    }
     .card:hover{transform:translateY(-6px);box-shadow:0 8px 24px rgba(0,0,0,0.6)}
     .card i{font-size:35px;margin-bottom:10px;color:#fff}
 
-    .c1{border-color:#FF6B6B}.c2{border-color:#FF9F1C}.c3{border-color:#2EC4B6}.c4{border-color:#4C6EF5}
-    .c5{border-color:#9F2CF5}.c6{border-color:#2DF57E}.c7{border-color:#ff3fbd}.c8{border-color:#16e0bd}
-    .c9{border-color:#f54291}.c10{border-color:#f1c40f}
+    .c1{border-color:#FF6B6B}
+    .c2{border-color:#FF9F1C}
+    .c3{border-color:#2EC4B6}
+    .c4{border-color:#4C6EF5}
+    .c5{border-color:#9F2CF5}
+    .c6{border-color:#2DF57E}
+    .c7{border-color:#ff3fbd}
+    .c8{border-color:#16e0bd}
+    .c9{border-color:#f54291}
+    .c10{border-color:#f1c40f}
 
     .card h3{font-size:20px;margin-bottom:8px}
     .card p{font-size:14px;color:#ccc}
 
-    .contact{width:90%;margin:auto;margin-top:40px;padding:30px;background:var(--card);
-      border-radius:15px;box-shadow:0 4px 20px rgba(0,0,0,0.4)}
+    .contact{
+      width:90%;margin:auto;margin-top:40px;padding:30px;background:var(--card);
+      border-radius:15px;box-shadow:0 4px 20px rgba(0,0,0,0.4)
+    }
     .contact h2{text-align:center;margin-bottom:20px}
     .form-group{margin-bottom:15px}
-    .form-group input,.form-group textarea{width:100%;padding:12px;border-radius:8px;border:1px solid #666;background:transparent;color:var(--text)}
+    .form-group input,.form-group textarea{
+      width:100%;padding:12px;border-radius:8px;border:1px solid #666;
+      background:transparent;color:var(--text)
+    }
     .form-group textarea{height:120px}
-    .contact button{margin-top:10px;padding:12px 20px;border:0;border-radius:8px;background:#4C6EF5;color:white;cursor:pointer;font-weight:600}
+    .contact button{
+      margin-top:10px;padding:12px 20px;border:0;border-radius:8px;background:#4C6EF5;
+      color:white;cursor:pointer;font-weight:600
+    }
 
-    footer{margin-top:60px;padding:40px;background:#08080e;color:#ccc;display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:20px;text-align:left}
+    footer{
+      margin-top:60px;padding:40px;background:#08080e;color:#ccc;
+      display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:20px;text-align:left
+    }
     footer h3{margin-bottom:10px;color:white}
     footer a{text-decoration:none;color:#bbb;font-size:14px;display:block;margin:6px 0}
     footer .copy{text-align:center;margin-top:20px;grid-column:1/-1;color:#999}
 
-    @media(max-width:768px){nav{display:none}.hamburger{display:block}.hero h2{font-size:32px}.hero p{font-size:16px}}
+    @media(max-width:768px){
+      nav{display:none}
+      .hamburger{display:block}
+      .hero h2{font-size:32px}
+      .hero p{font-size:16px}
+    }
   </style>
 </head>
 <body>
 
   <header>
     <div class="logo-area"><img src="SK.png"><h1>SAVKUCHH</h1></div>
-    <nav><a href="#">Home</a><a href="#services">Services</a><a href="#contact">Contact</a></nav>
+
+    <nav>
+      <a href="#">Home</a>
+      <a href="#services">Services</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
     <div style="display:flex;align-items:center;gap:20px">
-      <div class="icons"><i class="fa-solid fa-earth-americas"></i><i class="fa-brands fa-facebook"></i><i class="fa-brands fa-youtube"></i></div>
+      <div class="icons">
+        <i class="fa-solid fa-earth-americas"></i>
+        <i class="fa-brands fa-facebook"></i>
+        <i class="fa-brands fa-youtube"></i>
+      </div>
+
       <button class="mode-btn" onclick="toggleMode()">Mode</button>
+
       <i class="fa-solid fa-bars hamburger" onclick="toggleMenu()"></i>
     </div>
-    <div class="mobile-menu" id="mobMenu"><a href="#">Home</a><a href="#services">Services</a><a href="#contact">Contact</a></div>
+
+    <div class="mobile-menu" id="mobMenu">
+      <a href="#">Home</a>
+      <a href="#services">Services</a>
+      <a href="#contact">Contact</a>
+    </div>
   </header>
 
-  <section class="hero"><h2>Sab Kuchh Ek Hi Jagah!</h2><p>Aapki har zaroorat ke liye multicolor stylish homepage.</p>
-    <div class="hero-btns"><button class="btn1">Get Started</button><button class="btn2">Learn More</button></div>
+  <section class="hero">
+    <h2>Sab Kuchh Ek Hi Jagah!</h2>
+    <p>Aapki har zaroorat ke liye multicolor stylish homepage.</p>
+
+    <div class="hero-btns">
+      <button class="btn1">Get Started</button>
+      <button class="btn2">Learn More</button>
+    </div>
   </section>
 
   <h2 class="section-title">Suvidhayen</h2>
@@ -121,11 +201,17 @@
     <div class="card c10"><i class="fa-solid fa-headset"></i><h3>Support</h3><p>Online support.</p></div>
   </section>
 
-  <div class="slider" id="slider"><div class="slides" id="slides">
-      <img src="https://picsum.photos/1200/350?1"><img src="https://picsum.photos/1200/350?2">
-      <img src="https://picsum.photos/1200/350?3"><img src="https://picsum.photos/1200/350?4"></div></div>
+  <div class="slider" id="slider">
+    <div class="slides" id="slides">
+      <img src="https://picsum.photos/1200/350?1">
+      <img src="https://picsum.photos/1200/350?2">
+      <img src="https://picsum.photos/1200/350?3">
+      <img src="https://picsum.photos/1200/350?4">
+    </div>
+  </div>
 
-  <div class="contact" id="contact"><h2>Contact Us</h2>
+  <div class="contact" id="contact">
+    <h2>Contact Us</h2>
     <div class="form-group"><input placeholder="Name"></div>
     <div class="form-group"><input placeholder="Email"></div>
     <div class="form-group"><textarea placeholder="Message"></textarea></div>
@@ -133,21 +219,61 @@
   </div>
 
   <footer>
-    <div><h3>Links</h3><a href="#">Home</a><a href="#">About</a><a href="#">Privacy</a><a href="#">Terms</a></div>
-    <div><h3>Services</h3><a href="#">News</a><a href="#">Study</a><a href="#">Schemes</a><a href="#">Tools</a></div>
-    <div><h3>Support</h3><a href="#">Help Desk</a><a href="#">Contact</a><a href="#">Report Issue</a></div>
-    <div><h3>Social</h3><a href="#">Facebook</a><a href="#">YouTube</a><a href="#">Instagram</a></div>
-    <div class="copy">© <span id="year"></span> SAVKUCHH | All Rights Reserved</div>
+    <div>
+      <h3>Links</h3>
+      <a href="#">Home</a><a href="#">About</a><a href="#">Privacy</a><a href="#">Terms</a>
+    </div>
+    <div>
+      <h3>Services</h3>
+      <a href="#">News</a><a href="#">Study</a><a href="#">Schemes</a><a href="#">Tools</a>
+    </div>
+    <div>
+      <h3>Support</h3>
+      <a href="#">Help Desk</a><a href="#">Contact</a><a href="#">Report Issue</a>
+    </div>
+    <div>
+      <h3>Social</h3>
+      <a href="#">Facebook</a><a href="#">YouTube</a><a href="#">Instagram</a>
+    </div>
+
+    <div class="copy">
+      © <span id="year"></span> SAVKUCHH | All Rights Reserved
+    </div>
   </footer>
 
 <script>
   document.getElementById("year").textContent = new Date().getFullYear();
-  function toggleMode(){const html=document.documentElement;html.dataset.theme=html.dataset.theme==="dark"?"light":"dark"}
-  function toggleMenu(){const menu=document.getElementById("mobMenu");menu.style.display=menu.style.display==="flex"?"none":"flex"}
-  const slider=document.getElementById("slider");const slides=document.getElementById("slides");let startX=0;let index=0;
-  slider.addEventListener("touchstart",e=>{startX=e.touches[0].clientX});
-  slider.addEventListener("touchend",e=>{let endX=e.changedTouches[0].clientX;if(endX<startX-50)index++;if(endX>startX+50)index--;if(index<0)index=0;if(index>3)index=3;
-    slides.style.transform=`translateX(${-index*100}%)`});
+
+  function toggleMode(){
+    const html=document.documentElement;
+    html.dataset.theme = html.dataset.theme==="dark" ? "light" : "dark";
+  }
+
+  function toggleMenu(){
+    const menu=document.getElementById("mobMenu");
+    menu.style.display = menu.style.display==="flex" ? "none" : "flex";
+  }
+
+  const slider=document.getElementById("slider");
+  const slides=document.getElementById("slides");
+  let startX=0;
+  let index=0;
+
+  slider.addEventListener("touchstart",e=>{
+    startX=e.touches[0].clientX
+  });
+
+  slider.addEventListener("touchend",e=>{
+    let endX=e.changedTouches[0].clientX;
+
+    if(endX < startX-50) index++;
+    if(endX > startX+50) index--;
+
+    if(index<0) index=0;
+    if(index>3) index=3;
+
+    slides.style.transform=`translateX(${-index*100}%)`;
+  });
 </script>
 
 </body>
